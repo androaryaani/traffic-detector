@@ -7,6 +7,12 @@ import streamlit as st
 import cv2
 import numpy as np
 from PIL import Image
+import os
+import tempfile
+
+# Set YOLO config directory to a writable path (fixes Streamlit Cloud warning)
+os.environ["YOLO_CONFIG_DIR"] = tempfile.gettempdir()
+
 from ultralytics import YOLO
 import color_detector
 
